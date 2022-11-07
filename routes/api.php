@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\LanguageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\LoginController;
@@ -28,4 +29,5 @@ Route::middleware(['auth:api'])->group(function ()
 {
     Route::get('/test', [UserController::class, 'index']);
     Route::post('/user/logout', [LoginController::class, 'logout']);
+    Route::apiResource('languages',LanguageController::class);
 });
